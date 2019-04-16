@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spike.App.Repositories.Entities;
 using Spike.App.Repositories.Repositories;
+using Spike.App.Repositories.Specifications;
 using Spike.App.Tests.Builders;
 using Spike.App.Tests.Waldos;
 
@@ -80,6 +82,32 @@ namespace Spike.App.Tests
                 Console.WriteLine(e);
                 Assert.Fail();
                 throw;
+            }
+        }
+
+
+        [TestMethod]
+        public void TestWebsiteSpecification()
+        {
+            IEnumerable<Website> websites = null;
+
+            try
+            {
+                var spes = new WebsiteSpecification();
+                spes.CompanyNameStartingWith("Face");
+
+                websites = websiteRepo.FindUsingSpecification(spes);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Assert.Fail();
+                throw;
+            }
+
+            foreach (var website in websites)
+            {
+                Console.Write(website.CompanyName);
             }
         }
     }

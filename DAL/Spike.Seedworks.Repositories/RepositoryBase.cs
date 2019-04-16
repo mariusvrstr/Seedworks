@@ -5,14 +5,16 @@ using System.Data.Entity.Core;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using Spike.Seedworks.Conmmon.DAL;
+using Spike.Seedworks.Repositories.Specification;
 using Spike.Seedworks.Repositories.Utilities;
 
 namespace Spike.Seedworks.Repositories
 {
-    public abstract class RepositoryBase<T> : IRepository<T>
+    public abstract class RepositoryBase<T, TSpes> : IRepository<T>
         where T : class, IEntityBase
+        where TSpes : Specification<T, TSpes>, new()
     {
-        private DbContext Context { get; set; }
+        protected DbContext Context { get; set; }
         private DbSet<T> _table { get; set; }
 
         protected RepositoryBase(DbContext dataContext)
@@ -24,6 +26,12 @@ namespace Spike.Seedworks.Repositories
         public T GetById(Guid id)
         {
             return _table.Find(id);
+        }
+
+        public IList<T> FindUsingSpecification(Specification<T, TSpes> specification)
+        {
+            var expression = specification.Create();
+            return _table.Where(x => expression.SatisfiedBy(x)).ToList();
         }
 
         public IList<T> FindAll()

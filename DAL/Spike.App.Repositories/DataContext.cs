@@ -1,13 +1,12 @@
 ﻿using System.Data.Entity;
 using Spike.App.Repositories.Entities;
 using Spike.App.Repositories.EntityConfigurations;
-using SqlProviderServices = System.Data.Entity.SqlServer.SqlProviderServices;
 
-namespace Inoxico.Scrape.Spike.Repositories
+namespace Spike.App.Repositories
 {
     public class DataContext : DbContext
     {
-        public DataContext() : base("name=InoxicoScrapeConnection") // Connection String
+        public DataContext() : base("name=SpikeAppConnection") // Connection String Name
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<DataContext>());
         }

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike.Seedworks.Repositorie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike.App.Repositories", "Spike.App.Repositories\Spike.App.Repositories.csproj", "{23ACEF55-C4A8-4E12-839D-9C3E96FD60EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike.App.Tests", "Spike.App.Tests\Spike.App.Tests.csproj", "{B270A61B-F787-40F0-A6E5-5AE0C74733AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{23ACEF55-C4A8-4E12-839D-9C3E96FD60EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23ACEF55-C4A8-4E12-839D-9C3E96FD60EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23ACEF55-C4A8-4E12-839D-9C3E96FD60EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B270A61B-F787-40F0-A6E5-5AE0C74733AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B270A61B-F787-40F0-A6E5-5AE0C74733AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B270A61B-F787-40F0-A6E5-5AE0C74733AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B270A61B-F787-40F0-A6E5-5AE0C74733AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

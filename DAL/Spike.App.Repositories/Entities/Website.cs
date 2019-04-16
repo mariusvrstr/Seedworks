@@ -10,5 +10,7 @@ namespace Spike.App.Repositories.Entities
         public string CompanyName { get; set; }
 
         public string WebsiteUrl { get; set; }
+
+        public DateTime CreatedDate { get; set; }
     }
 }

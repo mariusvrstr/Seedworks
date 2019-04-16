@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Core;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using Spike.Seedworks.Conmmon.DAL;
+using Spike.Seedworks.Repositories.Utilities;
 
 namespace Spike.Seedworks.Repositories
 {
@@ -33,7 +35,7 @@ namespace Spike.Seedworks.Repositories
         {
             if (entity.Id == Guid.Empty)
             {
-                entity.Id = Guid.NewGuid();
+                entity.Id = SequentialGuidGenerator.NewSequentialId();
             }
 
            return _table.Add(entity);
@@ -46,8 +48,7 @@ namespace Spike.Seedworks.Repositories
                 throw new Exception($"Invalid update request. The ID [{id}] is different from the object provided");
             }
 
-            _table.Attach(entity);
-            Context.Entry(entity).State = EntityState.Modified;
+            Context.Set<T>().AddOrUpdate(entity);
 
             return entity;
         }

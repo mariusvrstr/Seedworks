@@ -8,11 +8,19 @@ namespace Spike.App.Tests.Builders
         public WebsiteBuilder(Guid? id = null)
         {
             this.Id = id ?? Guid.Empty;
+            this.CreatedDate = DateTime.Now;
         }
 
         public WebsiteBuilder UpdateId(Guid id)
         {
             this.Id = id;
+
+            return this;
+        }
+
+        public WebsiteBuilder UpdateName (string name)
+        {
+            this.CompanyName = name;
 
             return this;
         }
@@ -39,7 +47,8 @@ namespace Spike.App.Tests.Builders
             {
                 Id = this.Id,
                 CompanyName = this.CompanyName,
-                WebsiteUrl = this.WebsiteUrl
+                WebsiteUrl = this.WebsiteUrl,
+                CreatedDate = this.CreatedDate
             };
         }
     }

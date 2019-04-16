@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spike.App.Repositories.Entities;
 using Spike.App.Repositories.Repositories;
 using Spike.App.Tests.Builders;
+using Spike.App.Tests.Waldos;
 
 namespace Spike.App.Tests
 {
@@ -25,6 +26,7 @@ namespace Spike.App.Tests
             try
             {
                 response = websiteRepo.Add(website);
+                websiteRepo.Save();
             }
             catch (Exception e)
             {
@@ -34,9 +36,51 @@ namespace Spike.App.Tests
             }
 
             Assert.IsNotNull(response);
-            Assert.Equals(website.CompanyName, response.CompanyName);
-            Assert.Equals(website.WebsiteUrl, response.WebsiteUrl);
-            Assert.AreNotEqual(website.Id, response.Id);
+            Assert.AreEqual(website.CompanyName, response.CompanyName);
+            Assert.AreEqual(website.WebsiteUrl, response.WebsiteUrl);
+        }
+
+        [TestMethod]
+        public void TestUpdatedWebsite()
+        {
+            Website response;
+            var id = WebsiteWaldo.GetAnExistingIdByName(websiteRepo, "Facebook");
+            var website = new WebsiteBuilder(id).FacebookWebsite().UpdateName("Facebook Updated").Build();
+
+            try
+            {
+                response = websiteRepo.Update(id, website);
+                websiteRepo.Save();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Assert.Fail();
+                throw;
+            }
+
+            Assert.IsNotNull(response);
+            Assert.AreEqual(website.CompanyName, response.CompanyName);
+            Assert.AreEqual(website.WebsiteUrl, response.WebsiteUrl);
+        }
+
+        [TestMethod]
+        public void TestDeleteWebsite()
+        {
+            Website response;
+            var id = WebsiteWaldo.GetAnExistingIdByName(websiteRepo, "Facebook");
+
+            try
+            {
+                websiteRepo.Remove(id);
+                websiteRepo.Save();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Assert.Fail();
+                throw;
+            }
         }
     }
 }

@@ -2,6 +2,6 @@
 SDK Projects
 
 
-1. Add Specification to repository pattern for search
-2. Add sequential guids for ID's
-3. Add test project to show how to use repositories
+1. Specification was added but EF complains about the predicate generation
+2. Test performance and acuracy of Sequential Guids
+3. Not sure if IList is the best list mechanism, investigate

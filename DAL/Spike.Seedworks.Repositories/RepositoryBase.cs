@@ -31,7 +31,7 @@ namespace Spike.Seedworks.Repositories
         public IList<T> FindUsingSpecification(Specification<T, TSpes> specification)
         {
             var expression = specification.Create();
-            return _table.Where(x => expression.SatisfiedBy(x)).ToList();
+            return _table.Where(expression.SatisfiedBy).ToList();
         }
 
         public IList<T> FindAll()

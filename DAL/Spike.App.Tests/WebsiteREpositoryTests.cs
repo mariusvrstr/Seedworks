@@ -70,7 +70,7 @@ namespace Spike.App.Tests
         public void TestDeleteWebsite()
         {
             Website response;
-            var id = WebsiteWaldo.GetAnExistingIdByName(websiteRepo, "Facebook");
+            var id = WebsiteWaldo.GetAnExistingIdByName(websiteRepo, "Facebook Updated");
 
             try
             {

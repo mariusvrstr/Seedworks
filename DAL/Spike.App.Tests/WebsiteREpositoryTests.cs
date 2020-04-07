@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Spike.App.Repositories.Entities;
 using Spike.App.Repositories.Repositories;
@@ -108,6 +109,29 @@ namespace Spike.App.Tests
                 Console.WriteLine(e);
                 Assert.Fail();
                 throw;
+            }
+        }
+
+
+        [TestMethod]
+        public void TestWebsiteFindBasic()
+        {
+            IEnumerable<Website> websites = null;
+
+            try
+            {
+                websites = basicWebsiteRepo.FindAll().Where(a => a.CompanyName.StartsWith("Face"));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Assert.Fail();
+                throw;
+            }
+
+            foreach (var website in websites)
+            {
+                Console.Write(website.CompanyName);
             }
         }
 

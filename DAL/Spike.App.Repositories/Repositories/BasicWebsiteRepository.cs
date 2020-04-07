@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-using Spike.App.Repositories.Entities;
-using Spike.App.Repositories.Specifications;
+﻿using Spike.App.Repositories.Entities;
 using Spike.Seedworks.Repositories;
 
 namespace Spike.App.Repositories.Repositories
 {
-    public class WebsiteRepository : RepositoryBase<Website, WebsiteSpecification>
+    public class BasicWebsiteRepository : RepositorySimpleBase<Website>
     {
-        public WebsiteRepository(DataContext context = null) 
+        public BasicWebsiteRepository(DataContext context = null) 
             : base(context ?? new DataContext()) {}
 
     }

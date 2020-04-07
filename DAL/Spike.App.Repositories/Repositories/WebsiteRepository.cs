@@ -4,9 +4,9 @@ using Spike.Seedworks.Repositories;
 
 namespace Spike.App.Repositories.Repositories
 {
-    public class BasicWebsiteRepository : RepositoryBase<Website, WebsiteSpecification>
+    public class WebsiteRepository : RepositoryBase<Website, WebsiteSpecification>
     {
-        public BasicWebsiteRepository(DataContext context = null) 
+        public WebsiteRepository(DataContext context = null) 
             : base(context ?? new DataContext()) {}
 
     }

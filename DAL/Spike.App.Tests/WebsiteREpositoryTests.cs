@@ -13,14 +13,40 @@ namespace Spike.App.Tests
     public class WebsiteRepositoryTests
     {
         private WebsiteRepository websiteRepo;
+        private BasicWebsiteRepository basicWebsiteRepo;
 
         public WebsiteRepositoryTests()
         {
             websiteRepo = new WebsiteRepository();
+            basicWebsiteRepo = new BasicWebsiteRepository();
         }
 
         [TestMethod]
-        public void TestAddWebsite()
+        public void TestAddWebsiteToBasicBase()
+        {
+            Website response;
+            var website = new WebsiteBuilder().FacebookWebsite().Build();
+
+            try
+            {
+                response = basicWebsiteRepo.Add(website);
+                websiteRepo.Save();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Assert.Fail();
+                throw;
+            }
+
+            Assert.IsNotNull(response);
+            Assert.AreEqual(website.CompanyName, response.CompanyName);
+            Assert.AreEqual(website.WebsiteUrl, response.WebsiteUrl);
+        }
+
+
+        [TestMethod]
+        public void TestAddWebsiteToSpecificationBase()
         {
             Website response;
             var website = new WebsiteBuilder().FacebookWebsite().Build();

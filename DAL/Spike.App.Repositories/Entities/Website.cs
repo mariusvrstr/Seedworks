@@ -1,5 +1,5 @@
-﻿using System;
-using Spike.Seedworks.Conmmon.DAL;
+﻿using Seedworks.Conmmon.DAL;
+using System;
 
 namespace Spike.App.Repositories.Entities
 {

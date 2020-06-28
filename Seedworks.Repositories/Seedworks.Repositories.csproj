@@ -7,8 +7,8 @@
     <ProjectGuid>{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Spike.Seedworks.Repositories</RootNamespace>
-    <AssemblyName>Spike.Seedworks.Repositories</AssemblyName>
+    <RootNamespace>Seedworks.Repositories</RootNamespace>
+    <AssemblyName>Seedworks.Repositories</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\DAL\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\DAL\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -69,9 +69,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Spike.Seedworks.Common\Spike.Seedworks.Common.csproj">
+    <ProjectReference Include="..\Seedworks.Common\Seedworks.Common.csproj">
       <Project>{99d98fd3-aff2-4664-b722-cc6274f748d2}</Project>
-      <Name>Spike.Seedworks.Common</Name>
+      <Name>Seedworks.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

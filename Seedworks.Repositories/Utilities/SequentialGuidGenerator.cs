@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Spike.Seedworks.Repositories.Utilities
+namespace Seedworks.Repositories.Utilities
 {
     public class SequentialGuidGenerator
     {

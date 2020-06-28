@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace Spike.Seedworks.Repositories.Specification.Clauses
+namespace Seedworks.Repositories.Specification.Clauses
 {
     public sealed class DirectClause<TEntity> : Clause<TEntity> where TEntity : class
     {

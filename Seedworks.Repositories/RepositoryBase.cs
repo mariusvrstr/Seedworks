@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Core;
+using System.Data.Entity.Migrations;
 using System.Linq;
-using Spike.Seedworks.Conmmon.DAL;
+using Seedworks.Conmmon.DAL;
+using Seedworks.Repositories.Specification;
+using Seedworks.Repositories.Utilities;
 
-namespace Spike.Seedworks.Repositories
+namespace Seedworks.Repositories
 {
-    public abstract class RepositorySimpleBase<T> : IRepository<T>
+    public abstract class RepositoryBase<T, TSpes> : IRepository<T>
         where T : class, IEntityBase
+        where TSpes : Specification<T, TSpes>, new()
     {
-        private DbContext Context { get; set; }
+        protected DbContext Context { get; set; }
         private DbSet<T> _table { get; set; }
 
-        protected RepositorySimpleBase(DbContext dataContext)
+        protected RepositoryBase(DbContext dataContext)
         {
             this.Context = dataContext;
             _table = Context.Set<T>();
@@ -22,6 +26,12 @@ namespace Spike.Seedworks.Repositories
         public T GetById(Guid id)
         {
             return _table.Find(id);
+        }
+
+        public IList<T> FindUsingSpecification(Specification<T, TSpes> specification)
+        {
+            var expression = specification.Create();
+            return _table.Where(expression.SatisfiedBy).ToList();
         }
 
         public IList<T> FindAll()
@@ -33,7 +43,7 @@ namespace Spike.Seedworks.Repositories
         {
             if (entity.Id == Guid.Empty)
             {
-                entity.Id = Guid.NewGuid();
+                entity.Id = SequentialGuidGenerator.NewSequentialId();
             }
 
            return _table.Add(entity);
@@ -46,8 +56,7 @@ namespace Spike.Seedworks.Repositories
                 throw new Exception($"Invalid update request. The ID [{id}] is different from the object provided");
             }
 
-            _table.Attach(entity);
-            Context.Entry(entity).State = EntityState.Modified;
+            Context.Set<T>().AddOrUpdate(entity);
 
             return entity;
         }

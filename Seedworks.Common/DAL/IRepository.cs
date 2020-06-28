@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Spike.Seedworks.Conmmon.DAL
+namespace Seedworks.Conmmon.DAL
 {
     public interface IRepository<T> 
         where T : IEntityBase

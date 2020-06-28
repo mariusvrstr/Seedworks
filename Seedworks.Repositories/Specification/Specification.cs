@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Spike.Seedworks.Repositories.Specification.Clauses;
+using Seedworks.Repositories.Specification.Clauses;
 
-namespace Spike.Seedworks.Repositories.Specification
+namespace Seedworks.Repositories.Specification
 {
     public abstract class Specification<TEntity, TSpecification>
         where TEntity : class 

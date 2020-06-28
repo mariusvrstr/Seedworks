@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace Spike.Seedworks.Conmmon.DAL
+namespace Seedworks.Conmmon.DAL
 {
     public interface IEntityBase
     {

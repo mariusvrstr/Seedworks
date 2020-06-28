@@ -2,22 +2,18 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Core;
-using System.Data.Entity.Migrations;
 using System.Linq;
-using Spike.Seedworks.Conmmon.DAL;
-using Spike.Seedworks.Repositories.Specification;
-using Spike.Seedworks.Repositories.Utilities;
+using Seedworks.Conmmon.DAL;
 
-namespace Spike.Seedworks.Repositories
+namespace Seedworks.Repositories
 {
-    public abstract class RepositoryBase<T, TSpes> : IRepository<T>
+    public abstract class RepositorySimpleBase<T> : IRepository<T>
         where T : class, IEntityBase
-        where TSpes : Specification<T, TSpes>, new()
     {
-        protected DbContext Context { get; set; }
+        private DbContext Context { get; set; }
         private DbSet<T> _table { get; set; }
 
-        protected RepositoryBase(DbContext dataContext)
+        protected RepositorySimpleBase(DbContext dataContext)
         {
             this.Context = dataContext;
             _table = Context.Set<T>();
@@ -26,12 +22,6 @@ namespace Spike.Seedworks.Repositories
         public T GetById(Guid id)
         {
             return _table.Find(id);
-        }
-
-        public IList<T> FindUsingSpecification(Specification<T, TSpes> specification)
-        {
-            var expression = specification.Create();
-            return _table.Where(expression.SatisfiedBy).ToList();
         }
 
         public IList<T> FindAll()
@@ -43,7 +33,7 @@ namespace Spike.Seedworks.Repositories
         {
             if (entity.Id == Guid.Empty)
             {
-                entity.Id = SequentialGuidGenerator.NewSequentialId();
+                entity.Id = Guid.NewGuid();
             }
 
            return _table.Add(entity);
@@ -56,7 +46,8 @@ namespace Spike.Seedworks.Repositories
                 throw new Exception($"Invalid update request. The ID [{id}] is different from the object provided");
             }
 
-            Context.Set<T>().AddOrUpdate(entity);
+            _table.Attach(entity);
+            Context.Entry(entity).State = EntityState.Modified;
 
             return entity;
         }

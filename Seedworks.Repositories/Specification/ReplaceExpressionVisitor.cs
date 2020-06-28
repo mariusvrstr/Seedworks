@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Spike.Seedworks.Repositories.Specification
+namespace Seedworks.Repositories.Specification
 {
     public class ReplaceExpressionVisitor
         : ExpressionVisitor

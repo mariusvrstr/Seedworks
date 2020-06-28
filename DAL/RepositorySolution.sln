@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2037
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Seedworks", "Seedworks", "{FDD5576A-FE3E-4C56-9CCD-87923A9603A6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike.Seedworks.Common", "Spike.Seedworks.Common\Spike.Seedworks.Common.csproj", "{99D98FD3-AFF2-4664-B722-CC6274F748D2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike.Seedworks.Repositories", "Spike.Seedworks.Repositories\Spike.Seedworks.Repositories.csproj", "{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike.App.Repositories", "Spike.App.Repositories\Spike.App.Repositories.csproj", "{23ACEF55-C4A8-4E12-839D-9C3E96FD60EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike.App.Tests", "Spike.App.Tests\Spike.App.Tests.csproj", "{B270A61B-F787-40F0-A6E5-5AE0C74733AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seedworks.Common", "..\Seedworks.Common\Seedworks.Common.csproj", "{99D98FD3-AFF2-4664-B722-CC6274F748D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seedworks.Repositories", "..\Seedworks.Repositories\Seedworks.Repositories.csproj", "{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{99D98FD3-AFF2-4664-B722-CC6274F748D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99D98FD3-AFF2-4664-B722-CC6274F748D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99D98FD3-AFF2-4664-B722-CC6274F748D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99D98FD3-AFF2-4664-B722-CC6274F748D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{23ACEF55-C4A8-4E12-839D-9C3E96FD60EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{23ACEF55-C4A8-4E12-839D-9C3E96FD60EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23ACEF55-C4A8-4E12-839D-9C3E96FD60EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,6 +27,14 @@ Global
 		{B270A61B-F787-40F0-A6E5-5AE0C74733AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B270A61B-F787-40F0-A6E5-5AE0C74733AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B270A61B-F787-40F0-A6E5-5AE0C74733AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99D98FD3-AFF2-4664-B722-CC6274F748D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D98FD3-AFF2-4664-B722-CC6274F748D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D98FD3-AFF2-4664-B722-CC6274F748D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D98FD3-AFF2-4664-B722-CC6274F748D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D21DFE7-E82E-4076-A0A6-8ED7A59D1BE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

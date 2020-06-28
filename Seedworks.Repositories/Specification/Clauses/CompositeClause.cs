@@ -1,4 +1,4 @@
-﻿namespace Spike.Seedworks.Repositories.Specification.Clauses
+﻿namespace Seedworks.Repositories.Specification.Clauses
 {
     public abstract class CompositeClause<TEntity> : Clause<TEntity> where TEntity : class
     {

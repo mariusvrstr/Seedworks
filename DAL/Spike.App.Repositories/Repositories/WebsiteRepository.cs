@@ -1,6 +1,6 @@
-﻿using Spike.App.Repositories.Entities;
+﻿using Seedworks.Repositories;
+using Spike.App.Repositories.Entities;
 using Spike.App.Repositories.Specifications;
-using Spike.Seedworks.Repositories;
 
 namespace Spike.App.Repositories.Repositories
 {

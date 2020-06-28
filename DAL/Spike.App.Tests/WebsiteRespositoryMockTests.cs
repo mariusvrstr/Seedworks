@@ -4,7 +4,7 @@ using Rhino.Mocks;
 using Spike.App.Repositories.Entities;
 using Spike.App.Repositories.Repositories;
 using Spike.App.Tests.Builders;
-using Spike.Seedworks.Conmmon.DAL;
+using Seedworks.Conmmon.DAL;
 
 namespace Spike.App.Tests
 {

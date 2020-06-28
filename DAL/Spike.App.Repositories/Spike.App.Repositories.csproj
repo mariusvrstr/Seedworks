@@ -60,13 +60,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Spike.Seedworks.Common\Spike.Seedworks.Common.csproj">
+    <ProjectReference Include="..\..\Seedworks.Common\Seedworks.Common.csproj">
       <Project>{99d98fd3-aff2-4664-b722-cc6274f748d2}</Project>
-      <Name>Spike.Seedworks.Common</Name>
+      <Name>Seedworks.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Spike.Seedworks.Repositories\Spike.Seedworks.Repositories.csproj">
+    <ProjectReference Include="..\..\Seedworks.Repositories\Seedworks.Repositories.csproj">
       <Project>{2d21dfe7-e82e-4076-a0a6-8ed7a59d1be9}</Project>
-      <Name>Spike.Seedworks.Repositories</Name>
+      <Name>Seedworks.Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -77,21 +77,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Spike.App.Repositories\Spike.App.Repositories.csproj">
-      <Project>{23ACEF55-C4A8-4E12-839D-9C3E96FD60EF}</Project>
-      <Name>Spike.App.Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Spike.Seedworks.Common\Spike.Seedworks.Common.csproj">
-      <Project>{99d98fd3-aff2-4664-b722-cc6274f748d2}</Project>
-      <Name>Spike.Seedworks.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Spike.Seedworks.Repositories\Spike.Seedworks.Repositories.csproj">
-      <Project>{2d21dfe7-e82e-4076-a0a6-8ed7a59d1be9}</Project>
-      <Name>Spike.Seedworks.Repositories</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
+    <ProjectReference Include="..\..\Seedworks.Common\Seedworks.Common.csproj">
+      <Project>{99d98fd3-aff2-4664-b722-cc6274f748d2}</Project>
+      <Name>Seedworks.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Seedworks.Repositories\Seedworks.Repositories.csproj">
+      <Project>{2d21dfe7-e82e-4076-a0a6-8ed7a59d1be9}</Project>
+      <Name>Seedworks.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Spike.App.Repositories\Spike.App.Repositories.csproj">
+      <Project>{23acef55-c4a8-4e12-839d-9c3e96fd60ef}</Project>
+      <Name>Spike.App.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

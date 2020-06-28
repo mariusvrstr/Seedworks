@@ -1,5 +1,5 @@
 ﻿using Spike.App.Repositories.Entities;
-using Spike.Seedworks.Repositories;
+using Seedworks.Repositories;
 
 namespace Spike.App.Repositories.Repositories
 {
